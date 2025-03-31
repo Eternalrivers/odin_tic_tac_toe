@@ -1,7 +1,6 @@
 # Create board for the game
 class Board
   attr_accessor :grid, :arr
-  attr_reader :slot
 
   def initialize
     @grid = []
@@ -23,15 +22,11 @@ class Board
     player.symbol
   end
 
-  def player_selection
-    puts 'Pick a number designating the slot chosen'
-    @slot = gets.chomp
-  end
-
   def board_display(player)
+    @grid = []
     arr.each do |array|
-      if array.include?(slot)
-        index = array.find_index(slot)
+      if array.include?(player.choice)
+        index = array.find_index(player.choice)
         array[index] = player.symbol
       end
     end
