@@ -29,3 +29,17 @@ def game_turn(board, player)
   board.board_display(player)
   puts board.create_board
 end
+i = 0
+
+until i == 8 || @game_won == true
+  game_turn(@board, @player1)
+  check_lines?(player1_slots)
+
+  break if @game_won == true
+
+  game_turn(@board, @player2)
+  check_lines?(player2_slots)
+
+end
+
+puts 'You won!'
