@@ -23,3 +23,9 @@ puts @board.create_board
 
 player1_slots = @player1.player_choice
 player2_slots = @player2.player_choice
+
+def game_turn(board, player)
+  player.player_selection
+  board.board_display(player)
+  puts board.create_board
+end
