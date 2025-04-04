@@ -35,13 +35,13 @@ i = 0
 
 until @game_won == true
   game_turn(@board, @player1)
-  check_lines?(player1_slots)
+  check_lines?(player1_slots.sort)
   puts 'Game Over! Player 1 won the game!' if @game_won == true
   i += 1
   break if @game_won == true || i == 9
 
   game_turn(@board, @player2)
-  check_lines?(player2_slots)
+  check_lines?(player2_slots.sort)
   puts 'Game Over! Player 2 won the game!' if @game_won == true
   i += 1
 end
