@@ -13,6 +13,7 @@ def check_lines?(player_choices)
   player_choices.combination(3) do |arr|
     @game_won = true if @lines.include?(arr)
   end
+  @game_won
 end
 
 @board = Board.new
@@ -29,17 +30,20 @@ def game_turn(board, player)
   board.board_display(player)
   puts board.create_board
 end
+
 i = 0
 
-until i == 8 || @game_won == true
+until @game_won == true
   game_turn(@board, @player1)
   check_lines?(player1_slots)
-
-  break if @game_won == true
+  puts 'Game Over! Player 1 won the game!' if @game_won == true
+  i += 1
+  break if @game_won == true || i == 9
 
   game_turn(@board, @player2)
   check_lines?(player2_slots)
-
+  puts 'Game Over! Player 2 won the game!' if @game_won == true
+  i += 1
 end
 
-puts 'You won!'
+puts "Game Over! It's a draw!" if @game_won == false
