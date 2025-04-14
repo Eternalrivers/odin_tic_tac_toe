@@ -9,14 +9,33 @@ class Player
     @player_choice = []
   end
 
+  # def player_selection
+  #   puts 'Pick a number designating the slot chosen'
+  #   while @slot.nil? || (@slot == []) || @player_choice.include?(@slot.to_s)
+  #     @slot = gets.match(/\d/)
+  #   end
+  #   @choice = @slot.to_s
+  #   @player_choice << @choice
+  #   @slot = []
+  # end
+
   def player_selection
-    puts 'Pick a number designating the slot chosen'
-    while @slot.nil? || (@slot == []) || @player_choice.include?(@slot.to_s)
-      @slot = gets.match(/\d/)
-      puts 'Try Again'
+    @slot = nil
+    while @slot.nil?
+      begin
+        puts @slot
+        @slot = gets.match(/\d+/)[0]
+      rescue StandardError
+        puts 'Invalid input. Please input a number'
+        redo
+      end
+      if @slot.to_i > 9 || @slot.to_i < 1
+        puts 'Invalid input'
+        redo
+      else
+        @choice = @slot
+        player_choice << @slot
+      end
     end
-    @choice = @slot.to_s
-    @player_choice << @choice
-    @slot = []
   end
 end
