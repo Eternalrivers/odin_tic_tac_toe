@@ -1,10 +1,11 @@
 # Create board for the game
 class Board
-  attr_accessor :grid, :arr
+  attr_accessor :grid, :arr, :selected_slots
 
   def initialize
     @grid = []
     @arr = [%w[1 2 3], %w[4 5 6], %w[7 8 9]]
+    @selected_slots = []
   end
 
   def create_board

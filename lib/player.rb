@@ -19,7 +19,7 @@ class Player
   #   @slot = []
   # end
 
-  def player_selection
+  def player_selection(board)
     @slot = nil
     while @slot.nil?
       begin
@@ -29,11 +29,12 @@ class Player
         puts 'Invalid input. Please input a number'
         redo
       end
-      if @slot.to_i > 9 || @slot.to_i < 1
+      if @slot.to_i > 9 || @slot.to_i < 1 || board.selected_slots.include?(@slot)
         puts 'Invalid input'
         redo
       else
         @choice = @slot
+        board.selected_slots << @slot
         player_choice << @slot
       end
     end
