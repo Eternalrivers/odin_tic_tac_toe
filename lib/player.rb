@@ -22,14 +22,9 @@ class Player
   def player_selection(board)
     @slot = nil
     while @slot.nil?
-      begin
-        puts @slot
-        @slot = gets.match(/\d+/)[0]
-      rescue StandardError
-        puts 'Invalid input. Please input a number'
-        redo
-      end
-      if @slot.to_i > 9 || @slot.to_i < 1 || board.selected_slots.include?(@slot)
+      puts @slot
+      @slot = gets.chomp
+      if board.selected_slots.include?(@slot) || !board.arr.flatten.include?(@slot)
         puts 'Invalid input'
         redo
       else
