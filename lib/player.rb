@@ -9,20 +9,9 @@ class Player
     @player_choice = []
   end
 
-  # def player_selection
-  #   puts 'Pick a number designating the slot chosen'
-  #   while @slot.nil? || (@slot == []) || @player_choice.include?(@slot.to_s)
-  #     @slot = gets.match(/\d/)
-  #   end
-  #   @choice = @slot.to_s
-  #   @player_choice << @choice
-  #   @slot = []
-  # end
-
   def player_selection(board)
     @slot = nil
     while @slot.nil?
-      puts @slot
       @slot = gets.chomp
       if board.selected_slots.include?(@slot) || !board.arr.flatten.include?(@slot)
         puts 'Invalid input'
