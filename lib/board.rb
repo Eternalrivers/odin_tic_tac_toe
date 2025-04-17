@@ -1,6 +1,7 @@
 # Create board for the game
 class Board
-  attr_accessor :grid, :arr, :selected_slots
+  attr_accessor :selected_slots
+  attr_reader :arr
 
   def initialize
     @grid = []
@@ -32,4 +33,8 @@ class Board
       end
     end
   end
+
+  private
+
+  attr_accessor :grid
 end
