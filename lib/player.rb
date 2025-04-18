@@ -10,15 +10,14 @@ class Player
   end
 
   def player_selection(board)
-    @slot = nil
-    while @slot.nil?
+    loop do
       @slot = gets.chomp
-      if board.selected_slots.include?(@slot) || !board.arr.flatten.include?(@slot)
+      if board.arr.flatten.include?(@slot)
+        player_choice << @slot
+        break
+      else
         puts 'Invalid input'
         redo
-      else
-        board.selected_slots << @slot
-        player_choice << @slot
       end
     end
   end
