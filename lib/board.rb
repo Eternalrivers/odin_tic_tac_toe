@@ -27,8 +27,8 @@ class Board
   def board_display(player)
     @grid = []
     arr.each do |array|
-      if array.include?(player.choice)
-        index = array.find_index(player.choice)
+      if array.include?(player.slot)
+        index = array.find_index(player.slot)
         array[index] = player.symbol
       end
     end

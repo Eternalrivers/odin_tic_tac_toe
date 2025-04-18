@@ -1,6 +1,6 @@
 # For creating players in a game
 class Player
-  attr_reader :name, :symbol, :choice
+  attr_reader :name, :symbol, :slot
   attr_accessor :player_choice
 
   def initialize(name, symbol)
@@ -17,7 +17,6 @@ class Player
         puts 'Invalid input'
         redo
       else
-        @choice = @slot
         board.selected_slots << @slot
         player_choice << @slot
       end
