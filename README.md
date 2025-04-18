@@ -16,12 +16,29 @@ Project: Tic Tac Toe
 * The player wins the game when three marks is placed in a horizontal, 
   vertical, or diagonal row
 
-  +-+-+-+  +-+-+-+  +-+-+-+
-  |x| | |  |x| | |  |O|O|O|
-  +-+-+-+  +-+-+-+  +-+-+-+
-  | |x| |  |x| | |  | | | |
-  +-+-+-+  +-+-+-+  +-+-+-+
-  | | |x|  |x| | |  | | | |
-  +-+-+-+  +-+-+-+  +-+-+-+
+  +-+-+-+  
+  |x| | |  
+  +-+-+-+  
+  | |x| |  
+  +-+-+-+  
+  | | |x|  
+  +-+-+-+ 
+
+  +-+-+-+  
+  |x| | |  
+  +-+-+-+  
+  |x| | |  
+  +-+-+-+  
+  |x| | |  
+  +-+-+-+ 
+  
+  +-+-+-+  
+  |x|x|x|  
+  +-+-+-+  
+  | | | |  
+  +-+-+-+  
+  | | | |  
+  +-+-+-+ 
+
 
   - A draw will happen if all spaces is exhausted and no pattern is reached
