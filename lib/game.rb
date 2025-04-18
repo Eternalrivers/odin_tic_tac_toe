@@ -7,6 +7,8 @@ class Game
     @player1 = player1.new('Player_1', 'X')
     @player2 = player2.new('Player_2', 'O')
     @game_won = false
+    @lines = [%w[1 2 3], %w[4 5 6], %w[7 8 9], %w[1 4 7], %w[2 5 8], %w[3 6 9],
+              %w[1 5 9], %w[3 5 7]]
   end
 
   def check_lines?(player_choices)
@@ -28,6 +30,8 @@ class Game
 
   def play
     i = 0
+    player1_slots = @player1.player_choice
+    player2_slots = @player2.player_choice
 
     until @game_won == true
       game_turn(@board, @player1)
