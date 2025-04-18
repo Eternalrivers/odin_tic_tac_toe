@@ -21,7 +21,6 @@ class Game
   end
 
   def game_turn(board, player)
-    puts @board.create_board
     print "\n#{player.name}! Please choose your position: "
     player.player_selection(board)
     board.board_display(player)
@@ -32,6 +31,7 @@ class Game
     i = 0
     player1_slots = @player1.player_choice
     player2_slots = @player2.player_choice
+    puts @board.create_board
 
     until @game_won == true
       game_turn(@board, @player1)
