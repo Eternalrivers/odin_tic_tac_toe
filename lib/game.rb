@@ -46,7 +46,7 @@ class Game
     until @game_won == true
       game_turn(@board, current_player)
       check_lines?(current_player.player_choice.sort)
-      puts 'Game Over! Player 1 won the game!' if @game_won == true
+      puts "Game Over! #{current_player.name} won the game!" if @game_won == true
       i += 1
       break if @game_won == true || i == 9
 
